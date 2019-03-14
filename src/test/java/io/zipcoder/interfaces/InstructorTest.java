@@ -25,18 +25,16 @@ public class InstructorTest {
     public void teachTest(){
         //Given
         Student student1 = new Student(23L);
-        Student student2 = new Student(23L);
-        Learner[] learners = {student1,student2};
         double expected = 20;
         Instructor instructor = new Instructor(24L);
 
         //When
-        instructor.teach(learners,expected);
+        instructor.teach(student1,expected);
         double actual = student1.getLearningHours();
-        double actual2 = student2.getLearningHours();
+
 
         Assert.assertEquals(expected,actual,0);
-        Assert.assertEquals(expected,actual2,0);
+
     }
     @Test
     public void lectureTest() {

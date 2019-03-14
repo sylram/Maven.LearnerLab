@@ -12,6 +12,7 @@ public class InstructorsTest {
        int actual = Instructors.getInstance().getCount();
 
 
+
         Assert.assertEquals(expected,actual);
     }
     @Test
@@ -22,4 +23,21 @@ public class InstructorsTest {
 
         Assert.assertEquals(expected,actual);
     }
+    @Test
+    public void getArrayTest(){
+
+//        Instructor[] expected = {new Instructor(100L),new Instructor(101L),
+//                new Instructor(102L),new Instructor(103L),new Instructor(104L),
+//                new Instructor(105L),};
+
+
+
+        Instructor[] actual = Instructors.getInstance().getArray();
+
+        Assert.assertNotNull(actual);
+
+    }
+
+
 }
+

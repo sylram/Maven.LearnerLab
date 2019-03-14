@@ -3,15 +3,15 @@ package io.zipcoder.interfaces;
 import java.util.ArrayList;
 
 
-public class People {
+public abstract class People<E extends Person> {
 
-    private ArrayList<Person> personList;
+    ArrayList<E> personList;
 
     public People() {
         this.personList = new ArrayList<>();
     }
 
-    public void add(Person person) {
+    public void add(E person) {
         personList.add(person);
 
     }
@@ -20,17 +20,19 @@ public class People {
         return personList.size();
     }
 
-    public Person finById(Long given) {
-        for(Person p: personList){
-            if(p.getId()==given){
-                return p;
+    public E finById(Long given) {
+        for (E person : personList) {
+            if (person.getId() == given) {
+                return person;
             }
-        }return null;
+        }
+        return null;
     }
 
-    public void remove(Person given) {
-        if(personList.contains(given)){
-        personList.remove(given);}
+    public void remove(E given) {
+        if (personList.contains(given)) {
+            personList.remove(given);
+        }
     }
 
     public void remove(Long id) {
@@ -38,11 +40,19 @@ public class People {
 
     }
 
-    public Person[] getArray() {
-        return personList.toArray(new Person[personList.size()]);
-    }
+    public abstract E[] getArray();
+
+//        return (E[]) personList.toArray();
+
+
 
     public void removeAll() {
         personList.clear();
     }
+
+//    People Anonymous = new People() {
+//
+//    };
+
+
 }

@@ -1,9 +1,15 @@
 package io.zipcoder.interfaces;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class StudentTest {
+
+    @After
+    public void tearDown() {
+        Students.getInstance().removeAll();
+        Students.getInstance().populateStudents();}
 
     @Test
     public void instanceOfLearnerTest(){

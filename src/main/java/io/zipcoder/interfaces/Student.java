@@ -4,7 +4,7 @@ public class Student extends Person implements Learner {
 
 
     private double totalStudyTime;
-    public Learner[] learners;
+//    public Learner[] learners;
 
     public Student(Long id) {
         super(id);
